@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+  </head>
+  <!-- 
+  Task 5: Loose vs Strict Equality
+  Create two variables, one as a string "100" and the other as the number 100.
+  Use both == and === to compare them and comment on the difference between type coercion and
+  strict comparison.
+  -->
+  <body>
+    <script>
+      var stringNumber = "100";
+      var actualNumber = 100;
+
+      //  Loose Equality (==)
+      var looseCheck = stringNumber == actualNumber;
+      console.log("stringNumber == actualNumber: ", looseCheck); // true
+
+      //  Strict Equality (===)
+      var strictCheck = stringNumber === actualNumber;
+      console.log("stringNumber === actualNumber: ", strictCheck); //  false
+    </script>
+  </body>
+</html>

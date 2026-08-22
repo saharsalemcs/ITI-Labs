@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 9</title>
+  </head>
+
+  <!-- 
+  Task 9: Mini Quiz Game
+Create a quiz with 3 simple questions.
+- Ask each question using a prompt()
+- Use switch to check the answer
+- Track the score
+At the end, show the result as:
+- Score out of 3
+- "You passed!" if score is 2 or more, otherwise "Try again!"
+  -->
+
+  <body>
+    <script>
+      var score = 0;
+      var answer;
+
+      // Q1
+      answer = prompt("Q1: What is the capital of Egypt?");
+      if (answer !== null) {
+        switch (answer.trim().toLowerCase()) {
+          case "cairo":
+            score++;
+            break;
+        }
+      }
+
+      // Q2
+      answer = prompt("Q2: What is 5 + 5?");
+      if (answer !== null) {
+        switch (answer.trim().toLowerCase()) {
+          case "10":
+            score++;
+            break;
+        }
+      }
+
+      // Q3
+      answer = prompt("Q3: 1 + 1?");
+      if (answer !== null) {
+        switch (answer.trim().toLowerCase()) {
+          case "2":
+            score++;
+            break;
+        }
+      }
+
+      var message = score >= 2 ? "You passed!" : "Try again!";
+
+      alert("Your Score is: " + score + " out of 3\n" + message);
+    </script>
+  </body>
+</html>

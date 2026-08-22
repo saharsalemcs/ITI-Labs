@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 3</title>
+  </head>
+  <body>
+    <script>
+      class Employee {
+        #bonus = 1000;
+
+        constructor(name, baseSalary) {
+          this.name = name;
+          this.baseSalary = baseSalary;
+        }
+
+        getAnnualSalary() {
+          return this.baseSalary * 12;
+        }
+
+        getTotalAnnualSalary() {
+          return this.baseSalary * 12 + this.#bonus;
+        }
+      }
+
+      class Manager extends Employee {
+        constructor(name, baseSalary) {
+          super(name, baseSalary);
+        }
+
+        getAnnualSalary() {
+          return super.getAnnualSalary() * 1.1;
+          // return this.baseSalary * 12 * 1.1;
+        }
+
+        // tryAccessBonus() {
+        //   return this.#bonus;
+        // }
+      }
+
+      const emp = new Employee("Ahmed", 5000);
+      console.log("annual (employee):", emp.getAnnualSalary()); // 60000
+      console.log("total annual (employee):", emp.getTotalAnnualSalary()); // 61000
+
+      const manager = new Manager("Mona", 5000);
+      console.log("annual (manager):", manager.getAnnualSalary()); // 66000
+      console.log("total annual (manager):", manager.getTotalAnnualSalary()); // 61000
+
+      // console.log(emp.#bonus);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 6</title>
+  </head>
+  <body>
+    <script>
+      function testArgs() {
+        console.log(arguments);
+
+        // const arr = [...arguments];
+        const arr = Array.from(arguments);
+        console.log(arr);
+      }
+      testArgs(1, 2, 3);
+
+      // -------------------------------------------------------------------------------
+      function testRest(...args) {
+        console.log(args);
+      }
+      testRest(1, 2, 3);
+      /*
+      arguments                        rest 
+      Array-like                       real array
+      not support arrow fun            support arrow fun       
+      take all args                    as I wish, all or part            
+      */
+      // -------------------------------------------------------------------------------
+
+      const testArgsArrow = () => {
+        console.log(arguments); // Uncaught ReferenceError: arguments is not defined
+      };
+      testArgsArrow(1, 2, 3);
+      /*
+      use rest instead
+      */
+    </script>
+  </body>
+</html>

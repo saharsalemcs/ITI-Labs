@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Window Scroller</title>
+  </head>
+  <body>
+    <a
+      style="font-size: 20px"
+      href="#"
+      onclick="
+        openAdvertisingWindow();
+        return false;
+      "
+      >Open Pop-up Advertizing Window</a
+    >
+
+    <script>
+      var childWindow = null;
+
+      function openAdvertisingWindow() {
+        if (childWindow && !childWindow.closed) {
+          childWindow.focus();
+          return;
+        }
+
+        childWindow = window.open(
+          "popupWindow.html",
+          "advWin",
+          "width=400,height=400,scrollbars=yes",
+        );
+      }
+    </script>
+  </body>
+</html>

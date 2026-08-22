@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Task 2</title>
+  </head>
+  <!-- 
+  Task 2: Discount with Ternary Operator
+  Ask the user if they are a member (yes or no).
+  Use a ternary operator to apply:
+  - 25% discount for members
+  - 10% discount for non-members
+  Then display the final price based on an original value of $200.
+  -->
+  <body>
+    <script>
+      var input = prompt("Are you a member? (yes/no)");
+
+      if (input === null || input.trim() === "") {
+        alert("Invalid input! Please enter 'yes' or 'no'.");
+      }
+
+      // case-insensitive
+      var cleanedInput = input.trim().toLowerCase();
+
+      if (cleanedInput !== "yes" && cleanedInput !== "no") {
+        alert("Invalid input! enter either 'yes' or 'no'.");
+      }
+
+      var originalPrice = 200;
+
+      var discount = cleanedInput === "yes" ? 0.25 : 0.1;
+      var finalPrice = originalPrice * (1 - discount);
+
+      alert("Final price: $" + finalPrice);
+    </script>
+  </body>
+</html>

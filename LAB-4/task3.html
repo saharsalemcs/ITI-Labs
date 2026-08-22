@@ -1,0 +1,39 @@
+<!-- 
+
+receive number from user then display it with different locals 
+
+
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Task 3</title>
+  </head>
+  <body>
+    <script>
+      function displayWithLocales() {
+        var input = prompt("Enter a number:");
+        var num = Number(input);
+
+        if (input === null || input.trim() === "" || isNaN(num)) {
+          alert("Please enter a valid number.");
+          return;
+        }
+
+        alert(
+          "US: " +
+            num.toLocaleString("en-US") +
+            "\n" +
+            "German: " +
+            num.toLocaleString("de-DE") +
+            "\n" +
+            "Arabic: " +
+            num.toLocaleString("ar-EG"),
+        );
+      }
+
+      displayWithLocales();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+<html>
+  <head>
+    <title>task 1</title>
+    <style>
+      body {
+        background-image: url("images/image.png");
+        margin: 0;
+        padding: 40px;
+        object-fit: contain;
+      }
+      #outer {
+        border: 4px solid #4d4d4d;
+        background-color: #ffffff;
+        padding: 50px;
+        margin: 0 auto;
+        width: 500px;
+      }
+      #header {
+        border: 3px solid #666666;
+        background-color: #ffbdad;
+        padding: 10px;
+      }
+      #header:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      #tower {
+        float: left;
+        width: 60px;
+      }
+      #tower img {
+        width: 60px;
+        height: 70px;
+        display: block;
+      }
+      #titlewrap {
+        margin-left: 70px;
+        margin-right: 65px;
+        text-align: center;
+      }
+      #shield {
+        float: right;
+        width: 55px;
+      }
+      #shield img {
+        width: 55px;
+        height: 55px;
+        display: block;
+      }
+      #linkbox {
+        border: 3px solid #666666;
+        background-color: #ffbdad;
+        margin-top: 6px;
+        padding: 6px;
+        text-align: center;
+      }
+      #contentbox {
+        border: 3px solid #666666;
+        background-color: #ffbdad;
+        margin-top: 6px;
+        padding: 15px;
+        padding-left: 60px;
+      }
+      #footerbox {
+        background-color: #ffbdad;
+        margin-top: 15px;
+      }
+      .titletext {
+        font-family: "Edwardian Script ITC", "Bickham Script Pro", cursive;
+        font-size: 45px;
+        font-style: italic;
+        color: #000000;
+      }
+      .linktext {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        color: #ff0000;
+      }
+      .heading {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: underline;
+        color: #000000;
+        margin: 0 0 8px 0;
+      }
+      .bodytext {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 15px;
+        color: #000000;
+        margin: 0 0 15px 0;
+      }
+      .calcrow {
+        margin: 4px 0;
+      }
+      .calcrow img {
+        width: 18px;
+        height: 18px;
+        float: left;
+        margin-right: 6px;
+      }
+      .calclink {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 15px;
+        font-style: italic;
+        color: #cc0000;
+      }
+      .footertext {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        color: #000000;
+        text-align: center;
+        margin: 0;
+      }
+      a {
+        color: #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      <div id="header">
+        <div id="tower"><img src="images/tower.png" alt="Tower" /></div>
+        <div id="shield">
+          <img src="images/logo.png" alt="University" />
+        </div>
+        <div id="titlewrap">
+          <span class="titletext">Terps Calculators Inc.</span>
+        </div>
+      </div>
+
+      <div id="linkbox">
+        <span class="linktext">
+          <a href="">http://www.umd.edu</a>,
+          <a href="">http://www.cs.umd.edu</a>,
+          <a href="">http://www.testudo.umd.edu</a>
+        </span>
+      </div>
+
+      <div id="contentbox">
+        <p class="heading">Introduction</p>
+        <p class="bodytext">
+          <b>Terps Calculators Inc.</b>
+          <i
+            >implements and provides these calculators for your use. We keep
+            expanding our collection every day, so make sure you stop by
+            often.</i
+          >
+        </p>
+
+        <p class="heading">Calculators</p>
+
+        <div class="calcrow">
+          <img src="images/calc.png" alt="calculator" />
+          <a class="calclink" href="grades.html">Grades Calculator</a>
+        </div>
+        <div class="calcrow">
+          <img src="images/calc.png" alt="calculator" />
+          <a class="calclink" href="interest.html">Interest Calculator</a>
+        </div>
+      </div>
+
+      <div id="footerbox">
+        <p class="footertext">Terps Calculators Inc.&reg;</p>
+      </div>
+    </div>
+  </body>
+</html>

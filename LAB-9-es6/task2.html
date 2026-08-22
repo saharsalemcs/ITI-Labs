@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+  </head>
+  <body>
+    <script>
+      function calculate(op, nums) {
+        let result;
+        switch (op) {
+          case "+":
+          case "sum":
+            result = nums.reduce((acc, curr) => acc + curr, 0);
+            break;
+          case "-":
+          case "sub":
+            result = nums.reduce((acc, curr) => acc - curr);
+            break;
+          case "*":
+          case "multiply":
+            result = nums.reduce((acc, curr) => acc * curr, 1);
+            break;
+          case "divide":
+          case "/":
+            result = nums.reduce((acc, curr) => acc / curr);
+            break;
+          default:
+            console.log(`invalid operator: ${operator}`);
+            return;
+        }
+
+        console.log(
+          `result of ${op} operation for ${nums.join(",")} is ${result}`,
+        );
+      }
+
+      calculate("sum", [3, 1, 6, 3]);
+
+      calculate("sub", [3, 1, 6, 3]);
+
+      calculate("multiply", [3, 1, 6, 3]);
+    </script>
+  </body>
+</html>

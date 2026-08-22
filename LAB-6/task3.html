@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Task 3 :)</title>
+
+    <!-- some styling '-' -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 25px;
+      }
+      h2 {
+        color: #2c3e50;
+        border-bottom: 2px solid #2c3e50;
+        padding-bottom: 5px;
+      }
+      h3 {
+        color: #34495e;
+        margin-top: 25px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 70%;
+        margin-bottom: 10px;
+      }
+      th,
+      td {
+        border: 1px solid #bdc3c7;
+        padding: 8px 12px;
+        text-align: left;
+      }
+      th {
+        background-color: #ecf0f1;
+        color: #2c3e50;
+      }
+      .total-box {
+        font-size: 18px;
+        font-weight: bold;
+        color: #27ae60;
+        margin: 15px 0;
+        padding: 10px;
+        background-color: #e8f8f5;
+        border: 1px solid #27ae60;
+        display: inline-block;
+      }
+      .warning {
+        color: #c0392b;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Inventory Management System</h2>
+
+    <script>
+      var productCount;
+      do {
+        productCount = parseInt(
+          prompt("Enter number of products to add (minimum 3):"),
+        );
+        if (isNaN(productCount) || productCount < 3) {
+          alert("Please enter a number greater than or equal to 3");
+        }
+      } while (isNaN(productCount) || productCount < 3);
+
+      var inventory = [];
+      var totalInventoryValue = 0;
+
+      for (var i = 0; i < productCount; i++) {
+        alert("enter details for Product " + (i + 1) + " of " + productCount);
+
+        var pName;
+        do {
+          pName = prompt("Enter product name:");
+        } while (!pName || pName.trim() === "");
+
+        var pQuantity;
+        do {
+          pQuantity = parseInt(
+            prompt("Enter quantity for " + pName + " (must be >= 0):"),
+          );
+          if (isNaN(pQuantity) || pQuantity < 0) {
+            alert("Invalid quantity! Must be 0 or greater");
+          }
+        } while (isNaN(pQuantity) || pQuantity < 0);
+
+        var pPrice;
+        do {
+          pPrice = parseFloat(
+            prompt("Enter price for " + pName + " (must be >= 0):"),
+          );
+          if (isNaN(pPrice) || pPrice < 0) {
+            alert("Invalid price! Must be 0 or greater");
+          }
+        } while (isNaN(pPrice) || pPrice < 0);
+
+        var itemTotal = pQuantity * pPrice;
+        totalInventoryValue += itemTotal;
+
+        var product = {
+          name: pName,
+          quantity: pQuantity,
+          price: pPrice,
+          total: itemTotal,
+        };
+
+        inventory.push(product);
+      }
+
+      document.write("<h3>1. All Inventory Products</h3>");
+      document.write("<table>");
+      document.write(
+        "<tr><th>Name</th><th>Quantity</th><th>Price</th><th>Total Value</th></tr>",
+      );
+
+      for (var j = 0; j < inventory.length; j++) {
+        document.write("<tr>");
+        document.write("<td>" + inventory[j].name + "</td>");
+        document.write("<td>" + inventory[j].quantity + "</td>");
+        document.write("<td>$" + inventory[j].price + "</td>");
+        document.write("<td>$" + inventory[j].total + "</td>");
+        document.write("</tr>");
+      }
+      document.write("</table>");
+
+      document.write(
+        "<div class='total-box'>Total Inventory Value: $" +
+          totalInventoryValue +
+          "</div>",
+      );
+
+      document.write("<h3>2. Low Stock Warnings (Quantity &lt; 5)</h3>");
+      var hasLowStock = false;
+      document.write("<ul>");
+
+      for (var k = 0; k < inventory.length; k++) {
+        if (inventory[k].quantity < 5) {
+          document.write(
+            "<li class='warning'>WARNING: " +
+              inventory[k].name +
+              " has low stock! (Current quantity: " +
+              inventory[k].quantity +
+              ")</li>",
+          );
+          hasLowStock = true;
+        }
+      }
+
+      if (!hasLowStock) {
+        document.write(
+          "<li>All products are sufficiently stocked (Quantity &ge; 5).</li>",
+        );
+      }
+      document.write("</ul>");
+
+      var sortedInventory = inventory.slice().sort(function (a, b) {
+        return b.price - a.price;
+      });
+
+      document.write(
+        "<h3>3. Products Sorted by Price (Highest to Lowest)</h3>",
+      );
+      document.write("<table>");
+      document.write(
+        "<tr><th>Name</th><th>Quantity</th><th>Price</th><th>Total Value</th></tr>",
+      );
+
+      for (var m = 0; m < sortedInventory.length; m++) {
+        document.write("<tr>");
+        document.write("<td>" + sortedInventory[m].name + "</td>");
+        document.write("<td>" + sortedInventory[m].quantity + "</td>");
+        document.write("<td>$" + sortedInventory[m].price + "</td>");
+        document.write("<td>$" + sortedInventory[m].total + "</td>");
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </body>
+</html>

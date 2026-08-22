@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAsk 4</title>
+  </head>
+  <!-- 
+  Task 4: Login Validation
+  Ask the user to enter a username and password.
+  - If either field is empty -> "All fields are required!"
+  - If username is "admin" and password is "1234" -> "Welcome back, admin!"
+  - Otherwise -> "Incorrect credentials."
+  -->
+  <body>
+    <script>
+      var username = prompt("Enter username:");
+      var password = prompt("Enter password:");
+
+      if (
+        username === null ||
+        username.trim() === "" ||
+        password === null ||
+        password.trim() === ""
+      ) {
+        alert("All fields are required!");
+        return;
+      }
+
+      var cleanedUsername = username.trim();
+      var cleanedPassword = password.trim();
+
+      if (cleanedUsername === "admin" && cleanedPassword === "1234") {
+        alert("Welcome back, admin!");
+      } else {
+        alert("Incorrect credentials.");
+      }
+    </script>
+  </body>
+</html>

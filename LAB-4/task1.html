@@ -1,0 +1,57 @@
+<!-- 
+
+task1:
+
+Write a JavaScript function named addTwoNumbers that:
+
+Prompts the user to enter two numbers
+
+Converts the input values to numbers
+
+Validates the inputs
+
+Calculates and shows the sum
+
+Logs the values and the result  
+
+
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Task 1</title>
+  </head>
+  <body>
+    <script>
+      function addTwoNumbers() {
+        var input1 = prompt("Enter the first number:");
+        var input2 = prompt("Enter the second number:");
+
+        var num1 = Number(input1);
+        var num2 = Number(input2);
+
+        if (
+          input1 === null ||
+          input2 === null ||
+          input1.trim() === "" ||
+          input2.trim() === "" ||
+          isNaN(num1) ||
+          isNaN(num2)
+        ) {
+          alert("Invalid input. Please enter valid numeric values.");
+          return;
+        }
+
+        var sum = num1 + num2;
+
+        alert("The sum of " + num1 + " and " + num2 + " is: " + sum);
+        console.log("First Number:", num1);
+        console.log("Second Number:", num2);
+        console.log("Sum:", sum);
+      }
+
+      addTwoNumbers();
+    </script>
+  </body>
+</html>

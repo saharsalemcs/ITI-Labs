@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Advertising Window</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 15px;
+        line-height: 1.6;
+        color: #333333;
+        background-color: #eddc44;
+      }
+      p {
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quaerat
+      dolorem placeat modi! Dolores veritatis, temporibus maiores, qui
+      accusantium est sunt officiis dolorum ex nihil quas aliquam ea
+      reprehenderit harum?
+    </p>
+
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quaerat
+      dolorem placeat modi! Dolores veritatis, temporibus maiores, qui
+      accusantium est sunt officiis dolorum ex nihil quas aliquam ea
+      reprehenderit harum?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quaerat
+      dolorem placeat modi! Dolores veritatis, temporibus maiores, qui
+      accusantium est sunt officiis dolorum ex nihil quas aliquam ea
+      reprehenderit harum?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quaerat
+      dolorem placeat modi! Dolores veritatis, temporibus maiores, qui
+      accusantium est sunt officiis dolorum ex nihil quas aliquam ea
+      reprehenderit harum?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quaerat
+      dolorem placeat modi! Dolores veritatis, temporibus maiores, qui
+      accusantium est sunt officiis dolorum ex nihil quas aliquam ea
+      reprehenderit harum?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quaerat
+      dolorem placeat modi! Dolores veritatis, temporibus maiores, qui
+      accusantium est sunt officiis dolorum ex nihil quas aliquam ea
+      reprehenderit harum?
+    </p>
+
+    <script>
+      var scrollStep = 5;
+      var scrollInterval = null;
+
+      function startScrolling() {
+        scrollInterval = setInterval(function () {
+          var currentScroll =
+            window.pageYOffset ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop ||
+            0;
+          var windowHeight =
+            window.innerHeight ||
+            document.documentElement.clientHeight ||
+            document.body.clientHeight;
+          var totalHeight =
+            document.documentElement.scrollHeight || document.body.scrollHeight;
+
+          window.scrollBy(0, scrollStep);
+
+          if (currentScroll + windowHeight >= totalHeight - 2) {
+            scrollStep = -Math.abs(scrollStep);
+          }
+
+          if (currentScroll <= 0) {
+            scrollStep = Math.abs(scrollStep);
+          }
+        }, 50);
+      }
+
+      window.onload = startScrolling;
+    </script>
+  </body>
+</html>

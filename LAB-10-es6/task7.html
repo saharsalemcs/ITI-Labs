@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 7</title>
+  </head>
+  <body>
+    <script>
+      function outer() {
+        let x = 10;
+        console.log("x from outer", x); // 10
+
+        function inner() {
+          x += 5;
+          console.log("x from inner", x); // 15
+        }
+        x = 20; // 25
+        inner();
+        // x = 20; // 15  'for test'
+      }
+
+      outer();
+    </script>
+  </body>
+</html>

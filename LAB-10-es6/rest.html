@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let calculate = (operator, ...numbers) => {
+        let result;
+
+        switch (operator) {
+          case "sum":
+          case "+":
+            result = numbers.reduce((acc, curr) => acc + curr, 0);
+            break;
+          case "sub":
+          case "-":
+            result = numbers.reduce((acc, curr) => acc - curr);
+            break;
+          case "multiply":
+          case "*":
+            result = numbers.reduce((acc, curr) => acc * curr, 1);
+            break;
+          case "divide":
+          case "/":
+            result = numbers.reduce((acc, curr) => acc / curr);
+            break;
+          default:
+            console.log("invalid operator");
+            return;
+        }
+
+        console.log(
+          `result of ${operator} operation for ${numbers.join(",")} is ${result}`,
+        );
+      };
+
+      calculate("sum", 3, 1, 6, 3);
+      calculate("sub", 3, 1, 6, 3);
+      calculate("multiply", 3, 1, 6, 3);
+    </script>
+  </body>
+</html>

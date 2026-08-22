@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 1</title>
+  </head>
+  <body>
+    <script>
+      class User {
+        constructor(name) {
+          this.name = name;
+        }
+
+        login() {
+          return `${this.name} logged in`;
+        }
+
+        static getSystemRole() {
+          return "user";
+        }
+      }
+
+      class Admin extends User {
+        // same
+        static getSystemRole() {
+          return "admin";
+        }
+      }
+
+      const user = new User("Sahar");
+      const admin = new Admin("Mohamed");
+
+      console.log(user.login());
+      console.log(admin.login());
+
+      // console.log(user.getSystemRole()); // task2-lab2.html:39 Uncaught TypeError: user.getSystemRole is not a function
+
+      console.log(User.getSystemRole());
+      console.log(Admin.getSystemRole());
+    </script>
+  </body>
+</html>

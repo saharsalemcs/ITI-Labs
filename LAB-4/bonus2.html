@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Bonus 2</title>
+  </head>
+  <body>
+    <script>
+      var sum = 0;
+      var input;
+      var num;
+
+      while (true) {
+        input = prompt("Enter a number:");
+        num = Number(input);
+
+        if (input !== null || num.trim() !== "" || !isNaN(num)) {
+          if (num === 0) break;
+
+          sum += num;
+
+          if (sum > 100) {
+            alert("cannot exceed the 100.");
+            break;
+          }
+        } else {
+          alert("enter a valid number");
+          continue;
+        }
+      }
+
+      alert("sum = " + sum);
+      console.log("sum = " + sum);
+    </script>
+  </body>
+</html>

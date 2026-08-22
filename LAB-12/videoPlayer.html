@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Player</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #0b111e;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: white;
+      }
+
+      .container {
+        width: 750px;
+        background-color: #1a2332;
+        padding: 25px;
+        margin: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      video {
+        width: 100%;
+        border-radius: 10px;
+        height: 320px;
+        background: black;
+      }
+
+      .controls {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      button {
+        padding: 8px 14px;
+        margin: 5px;
+        border: none;
+        border-radius: 8px;
+        background: #2b6bf3;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background: #1e52c8;
+      }
+
+      p {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input[type="range"] {
+        width: 100%;
+        accent-color: #1e52c8;
+        cursor: pointer;
+      }
+      .size-controls {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .time-display {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 18px;
+        color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container" id="playerCard">
+      <h2>🎬 Modern Video Player</h2>
+
+      <video id="video" src="media/video.mp4"></video>
+
+      <section class="controls">
+        <button id="playBtn">▶ Play</button>
+        <button id="pauseBtn">⏸ Pause</button>
+        <button id="stopBtn">⏹ Stop</button>
+        <button id="muteBtn">🔇 Mute</button>
+        <button id="muteBtn">🔁 Loop</button>
+        <button id="fullscreenBtn">⛶ Fullscreen</button>
+        <br />
+        <button class="speedBtn" data-speed="0.5">0.5x</button>
+        <button class="speedBtn" data-speed="1">1x</button>
+        <button class="speedBtn" data-speed="2">2x</button>
+      </section>
+
+      <p>Volume</p>
+      <input type="range" id="volume" min="0" max="1" step="0.2" value="1" />
+
+      <p>Progress</p>
+      <input type="range" id="progress" min="0" max="100" value="0" />
+
+      <div class="size-controls">
+        <button onclick="resizePlayer('500px')">Small</button>
+        <button onclick="resizePlayer('650px')">Medium</button>
+        <button onclick="resizePlayer('800px')">Large</button>
+      </div>
+
+      <footer class="time-display">
+        <span id="current">00:00</span>
+        <span id="duration">00:00</span>
+      </footer>
+    </section>
+  </body>
+
+  <script>
+    const video = document.getElementById("video");
+    const playBtn = document.getElementById("playBtn");
+    const pauseBtn = document.getElementById("pauseBtn");
+    const stopBtn = document.getElementById("stopBtn");
+    const muteBtn = document.getElementById("muteBtn");
+    const fullscreenBtn = document.getElementById("fullscreenBtn");
+
+    const volume = document.getElementById("volume");
+    const progress = document.getElementById("progress");
+
+    const current = document.getElementById("current");
+    const duration = document.getElementById("duration");
+
+    const speedBtns = document.querySelectorAll(".speedBtn");
+    const playerCard = document.getElementById("playerCard");
+
+    playBtn.addEventListener("click", function () {
+      video.play();
+    });
+
+    pauseBtn.addEventListener("click", function () {
+      video.pause();
+    });
+
+    stopBtn.addEventListener("click", function () {
+      video.pause();
+      video.currentTime = 0;
+    });
+
+    muteBtn.addEventListener("click", function () {
+      video.muted = !video.muted;
+
+      if (video.muted) {
+        muteBtn.textContent = "🔊 Unmute";
+      } else {
+        muteBtn.textContent = "🔇 Mute";
+      }
+    });
+
+    fullscreenBtn.addEventListener("click", function () {
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      }
+    });
+
+    speedBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        video.playbackRate = this.dataset.speed;
+      });
+    });
+
+    function resizePlayer(width) {
+      playerCard.style.width = width;
+    }
+
+    volume.addEventListener("input", function () {
+      video.volume = this.value;
+    });
+
+    progress.addEventListener("input", function () {
+      if (video.duration) {
+        video.currentTime = (this.value / 100) * video.duration;
+      }
+    });
+
+    video.addEventListener("timeupdate", function () {
+      if (video.duration) {
+        progress.value = (video.currentTime / video.duration) * 100;
+      }
+
+      current.textContent = format(video.currentTime);
+    });
+
+    video.addEventListener("loadedmetadata", function () {
+      duration.textContent = format(video.duration);
+    });
+
+    function format(time) {
+      let m = Math.floor(time / 60);
+      let s = Math.floor(time % 60);
+
+      if (m < 10) m = "0" + m;
+      if (s < 10) s = "0" + s;
+
+      return m + ":" + s;
+    }
+  </script>
+</html>

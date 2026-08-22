@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Register</title>
+  </head>
+  <body>
+    <div id="formContainer">
+      Enter your name:
+      <input type="text" id="txtName" />
+      <br /><br />
+
+      Enter your age:
+      <input type="text" id="txtAge" />
+      <br /><br />
+
+      Select your Gender: <br />
+      <img src="male.png" width="100" alt="Male" />
+      <input type="radio" name="gender" value="male" />
+
+      <img src="female.png" width="150" alt="Female" />
+      <input type="radio" name="gender" value="female" />
+      <br /><br />
+
+      Select your favorite color:
+      <select id="selColor">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+      </select>
+      <br /><br />
+
+      <button onclick="register()">register</button>
+    </div>
+
+    <div id="profileInfo" style="display: none">
+      <img id="profileImg" src="" width="150" alt="Profile" />
+      Welcome <span id="profileName"></span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

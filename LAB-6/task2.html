@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Task 2 :)</title>
+  </head>
+  <body>
+    <script>
+      var arraySize;
+      do {
+        arraySize = parseInt(prompt("Enter the size of the array: "));
+      } while (isNaN(arraySize) || arraySize <= 0);
+
+      var numbersArray = [];
+      for (var i = 0; i < arraySize; i++) {
+        var num;
+        do {
+          num = parseFloat(
+            prompt("Enter number " + (i + 1) + " of " + arraySize + ":"),
+          );
+          if (isNaN(num)) {
+            alert("Invalid input! Please enter a valid number.");
+          }
+        } while (isNaN(num));
+
+        numbersArray.push(num);
+      }
+
+      var repeatProcess = true;
+
+      while (repeatProcess) {
+        var menuText =
+          "Choose an operation by entering its letter:\n\n" +
+          "a : Display original array\n" +
+          "b : Display array in ascending order\n" +
+          "c : Display array in descending order\n" +
+          "d : Display reversed version of array\n" +
+          "e : Display even numbers only\n" +
+          "f : Display numbers divisible by a specific number\n" +
+          "g : Display array with 30% discount\n" +
+          "h : Display numbers concatenated with ***";
+
+        var choice = prompt(menuText);
+
+        if (choice !== null) {
+          choice = choice.toLowerCase();
+
+          switch (choice) {
+            case "a":
+              alert("Original Array: \n" + numbersArray.join(" , "));
+              break;
+
+            case "b":
+              var ascArray = numbersArray.slice().sort(function (x, y) {
+                return x - y;
+              });
+              alert("Ascending Order: \n" + ascArray.join(" , "));
+              break;
+
+            case "c":
+              var descArray = numbersArray.slice().sort(function (x, y) {
+                return y - x;
+              });
+              alert("Descending Order: \n" + descArray.join(" , "));
+              break;
+
+            case "d":
+              var reversedArray = numbersArray.slice().reverse();
+              alert("Reversed Array: \n" + reversedArray.join(" , "));
+              break;
+
+            case "e":
+              var evenNumbers = [];
+              for (var j = 0; j < numbersArray.length; j++) {
+                if (numbersArray[j] % 2 === 0) {
+                  evenNumbers.push(numbersArray[j]);
+                }
+              }
+              if (evenNumbers.length === 0) {
+                alert("There are no even numbers in the array.");
+              } else {
+                alert("Even Numbers: \n" + evenNumbers.join(" , "));
+              }
+              break;
+
+            case "f":
+              var divisor = parseFloat(prompt("Enter a number to divide by:"));
+              if (isNaN(divisor) || divisor === 0) {
+                alert("Invalid number or cannot divide by zero.");
+              } else {
+                var divisibleNumbers = [];
+                for (var k = 0; k < numbersArray.length; k++) {
+                  if (numbersArray[k] % divisor === 0) {
+                    divisibleNumbers.push(numbersArray[k]);
+                  }
+                }
+                if (divisibleNumbers.length === 0) {
+                  alert("There are no numbers divisible by " + divisor);
+                } else {
+                  alert(
+                    "Numbers divisible by " +
+                      divisor +
+                      ": \n" +
+                      divisibleNumbers.join(" , "),
+                  );
+                }
+              }
+              break;
+
+            case "g":
+              var discountedArray = [];
+              for (var m = 0; m < numbersArray.length; m++) {
+                var discountVal = numbersArray[m] - numbersArray[m] * 0.3;
+                discountedArray.push(discountVal.toFixed(2));
+              }
+              alert(
+                "Array with 30% discount: \n" + discountedArray.join(" , "),
+              );
+              break;
+
+            case "h":
+              alert("Concatenated string: \n" + numbersArray.join("***"));
+              break;
+
+            default:
+              alert("Invalid choice! Please enter a letter from a to h.");
+          }
+        }
+
+        var askRepeat = prompt("Do you want to repeat running? (yes / no)");
+
+        if (
+          askRepeat === null ||
+          (askRepeat.toLowerCase() !== "yes" && askRepeat.toLowerCase() !== "y")
+        ) {
+          repeatProcess = false;
+          alert("Thank you! Goodbye.");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [25, 70, 10, 100, 90, 45, 60, 15];
+
+      let ascending = numbers.slice();
+      ascending.sort((a, b) => a - b);
+      console.log("Ascending:", ascending);
+
+      let descending = numbers.slice();
+      descending.sort((a, b) => b - a);
+      console.log("Descending:", descending);
+
+      let greaterThan50 = numbers.filter((num) => num > 50);
+      console.log("Greater than 50:", greaterThan50);
+
+      let min = numbers[0];
+      let max = numbers[0];
+      for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] > max) max = numbers[i];
+        if (numbers[i] < min) min = numbers[i];
+      }
+
+      console.log("Max:", max);
+      console.log("Min:", min);
+    </script>
+  </body>
+</html>

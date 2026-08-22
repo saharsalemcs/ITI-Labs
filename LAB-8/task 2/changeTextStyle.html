@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Change Text Style</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <p id="targetText">This is a paragraph of text</p>
+
+    <table id="optionsTable">
+      <tr>
+        <th>fontFamily</th>
+        <th>textAlign</th>
+        <th>lineHeight</th>
+        <th>letterSpacing</th>
+        <th>textIndent</th>
+        <th>textTransform</th>
+        <th>textDecoration</th>
+        <th>borderStyle</th>
+        <th>borderColor</th>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            <input type="radio" name="fontFamily" value="arial" checked />
+            arial</label
+          >
+          <label>
+            <input type="radio" name="fontFamily" value="courier" />
+            courier</label
+          >
+          <label>
+            <input
+              type="radio"
+              name="fontFamily"
+              value="georgia"
+            />georgia</label
+          >
+          <label>
+            <input type="radio" name="fontFamily" value="impact" />
+            impact</label
+          >
+          <label>
+            <input type="radio" name="fontFamily" value="'times new roman'" />
+            times new roman</label
+          >
+          <label>
+            <input type="radio" name="fontFamily" value="verdana" />
+            verdana</label
+          >
+        </td>
+        <td>
+          <label>
+            <input type="radio" name="textAlign" value="left" checked />
+            left</label
+          >
+          <label>
+            <input type="radio" name="textAlign" value="center" />
+            center</label
+          >
+          <label>
+            <input type="radio" name="textAlign" value="right" /> right</label
+          >
+          <label>
+            <input type="radio" name="textAlign" value="justify" />
+            justify</label
+          >
+        </td>
+        <td>
+          <label>
+            <input type="radio" name="lineHeight" value="normal" checked />
+            normal</label
+          >
+          <label
+            ><input type="radio" name="lineHeight" value="10px" /> 10px</label
+          >
+          <label
+            ><input type="radio" name="lineHeight" value="15px" /> 15px</label
+          >
+          <label
+            ><input type="radio" name="lineHeight" value="1.5" /> 1.5</label
+          >
+        </td>
+        <td>
+          <label
+            ><input type="radio" name="letterSpacing" value="normal" checked />
+            normal</label
+          >
+          <label
+            ><input type="radio" name="letterSpacing" value="-1px" />
+            -1px</label
+          >
+          <label
+            ><input type="radio" name="letterSpacing" value="2px" /> 2px</label
+          >
+          <label
+            ><input type="radio" name="letterSpacing" value="3px" /> 3px</label
+          >
+        </td>
+        <td>
+          <label
+            ><input type="radio" name="textIndent" value="0px" checked />
+            0px</label
+          >
+          <label
+            ><input type="radio" name="textIndent" value="5px" /> 5px</label
+          >
+          <label
+            ><input type="radio" name="textIndent" value="15px" /> 15px</label
+          >
+          <label
+            ><input type="radio" name="textIndent" value="25px" /> 25px</label
+          >
+        </td>
+        <td>
+          <label
+            ><input type="radio" name="textTransform" value="none" checked />
+            none</label
+          >
+          <label
+            ><input type="radio" name="textTransform" value="capitalize" />
+            capitalize</label
+          >
+          <label
+            ><input type="radio" name="textTransform" value="uppercase" />
+            uppercase</label
+          >
+          <label
+            ><input type="radio" name="textTransform" value="lowercase" />
+            lowercase</label
+          >
+        </td>
+        <td>
+          <label
+            ><input type="radio" name="textDecoration" value="none" checked />
+            none</label
+          >
+          <label
+            ><input type="radio" name="textDecoration" value="line-through" />
+            line-through</label
+          >
+          <label
+            ><input type="radio" name="textDecoration" value="overline" />
+            overline</label
+          >
+          <label
+            ><input type="radio" name="textDecoration" value="underline" />
+            underline</label
+          >
+        </td>
+        <td>
+          <label
+            ><input type="radio" name="borderStyle" value="none" checked />
+            none</label
+          >
+          <label
+            ><input type="radio" name="borderStyle" value="dotted" />
+            dotted</label
+          >
+          <label
+            ><input type="radio" name="borderStyle" value="double" />
+            double</label
+          >
+          <label
+            ><input type="radio" name="borderStyle" value="groove" />
+            groove</label
+          >
+          <label
+            ><input type="radio" name="borderStyle" value="dashed" />
+            dashed</label
+          >
+          <label
+            ><input type="radio" name="borderStyle" value="inset" />
+            insert</label
+          >
+          <label
+            ><input type="radio" name="borderStyle" value="solid" />
+            solid</label
+          >
+          <label
+            ><input type="radio" name="borderStyle" value="outset" />
+            outset</label
+          >
+          <label
+            ><input type="radio" name="borderStyle" value="ridge" />
+            ridge</label
+          >
+        </td>
+        <td>
+          <label
+            ><input
+              type="radio"
+              name="borderColor"
+              value="transparent"
+              checked
+            />
+            none</label
+          >
+          <label
+            ><input type="radio" name="borderColor" value="pink" /> pink</label
+          >
+          <label
+            ><input type="radio" name="borderColor" value="red" /> red</label
+          >
+          <label
+            ><input type="radio" name="borderColor" value="green" />
+            green</label
+          >
+          <label
+            ><input type="radio" name="borderColor" value="blue" /> blue</label
+          >
+          <label
+            ><input type="radio" name="borderColor" value="yellow" />
+            yellow</label
+          >
+          <label
+            ><input type="radio" name="borderColor" value="purple" />
+            purple</label
+          >
+        </td>
+      </tr>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>

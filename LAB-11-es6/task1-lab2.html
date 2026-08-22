@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 1</title>
+  </head>
+  <body>
+    <script>
+      class Vehicle {
+        constructor(brand, year) {
+          this.brand = brand;
+          this.year = year;
+        }
+
+        display() {
+          console.log(`Brand: ${this.brand}, Year: ${this.year}`);
+        }
+      }
+
+      class Car extends Vehicle {
+        constructor(brand, year, model) {
+          super(brand, year);
+          this.model = model;
+        }
+
+        display() {
+          console.log(
+            `Brand: ${this.brand}, Year: ${this.year}, Model: ${this.model}`,
+          );
+        }
+      }
+
+      const car1 = new Car("Toyota", 2023, "Corolla");
+
+      car1.display();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>To Do Organizer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+      }
+
+      h1 {
+        color: #7d2626;
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+
+      .input-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        width: 700px;
+      }
+
+      #taskInput {
+        flex-grow: 1;
+        padding: 12px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+        outline: none;
+      }
+
+      #addButton {
+        padding: 10px 25px;
+        margin-left: 15px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: #808080;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      #addButton.active {
+        background-color: #3b82f6;
+      }
+
+      table {
+        width: 700px;
+        border-collapse: collapse;
+        text-align: center;
+      }
+
+      th {
+        background-color: #cc0000;
+        color: white;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 20px;
+        padding: 5px 0;
+        border-left: 2px solid white;
+        border-right: 2px solid white;
+      }
+
+      th:first-child {
+        border-left: none;
+      }
+      th:last-child {
+        border-right: none;
+      }
+
+      td {
+        padding: 8px;
+        font-size: 18px;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #dfdcdc;
+      }
+
+      tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+      }
+
+      .completed {
+        text-decoration: line-through;
+        color: #555;
+      }
+
+      .delete-btn {
+        color: #d11a2a;
+        cursor: pointer;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>To Do Organizer</h1>
+
+    <div class="input-container">
+      <input type="text" id="taskInput" placeholder="Enter Task Name" />
+      <button id="addButton">Add</button>
+    </div>
+
+    <table id="taskTable">
+      <thead>
+        <tr>
+          <th style="width: 20%">Done</th>
+          <th style="width: 60%">Task</th>
+          <th style="width: 20%">Delete</th>
+        </tr>
+      </thead>
+      <tbody id="taskList"></tbody>
+    </table>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var taskInput = document.getElementById("taskInput");
+        var addButton = document.getElementById("addButton");
+        var taskList = document.getElementById("taskList");
+
+        taskInput.addEventListener("input", function () {
+          if (taskInput.value.trim() !== "") {
+            addButton.classList.add("active");
+          } else {
+            addButton.classList.remove("active");
+          }
+        });
+
+        addButton.addEventListener("click", function () {
+          var taskText = taskInput.value.trim();
+
+          if (taskText === "") {
+            return;
+          }
+
+          var tr = document.createElement("tr");
+
+          var tdCheck = document.createElement("td");
+          var checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+
+          checkbox.addEventListener("change", function () {
+            if (this.checked) {
+              tdTask.classList.add("completed");
+            } else {
+              tdTask.classList.remove("completed");
+            }
+          });
+          tdCheck.appendChild(checkbox);
+
+          var tdTask = document.createElement("td");
+          tdTask.textContent = taskText;
+
+          var tdDelete = document.createElement("td");
+          var deleteIcon = document.createElement("i");
+          deleteIcon.className = "fas fa-trash-alt delete-btn"; // FontAwesome Trash Icon
+
+          deleteIcon.addEventListener("click", function () {
+            var confirmDelete = confirm("R U Sure to delete this task");
+            if (confirmDelete === true) {
+              taskList.removeChild(tr);
+            }
+          });
+          tdDelete.appendChild(deleteIcon);
+
+          tr.appendChild(tdCheck);
+          tr.appendChild(tdTask);
+          tr.appendChild(tdDelete);
+
+          taskList.appendChild(tr);
+
+          taskInput.value = "";
+          addButton.classList.remove("active");
+        });
+
+        taskInput.addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            addButton.click();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

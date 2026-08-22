@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task 1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        padding: 40px;
+      }
+
+      .controls {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 30px;
+        justify-content: center;
+      }
+
+      .btn {
+        width: 150px;
+        height: 50px;
+        background-color: #5b9bd5;
+        color: white;
+        border: none;
+        padding: 10px 30px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .container {
+        width: 700px;
+        height: 450px;
+        margin: 50px auto;
+        position: relative;
+      }
+
+      .box {
+        width: 180px;
+        height: 100px;
+        position: absolute;
+        animation: moveSquare 8s linear infinite;
+        animation-play-state: paused;
+      }
+
+      .box:hover {
+        animation-play-state: paused !important;
+      }
+
+      .box-inner {
+        width: 100%;
+        height: 100%;
+        transition:
+          transform 0.2s ease,
+          background-color 0.2s ease;
+      }
+
+      .box:hover .box-inner {
+        transform: scale(1.1);
+      }
+
+      @keyframes moveSquare {
+        0% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(500px, 0);
+        }
+        50% {
+          transform: translate(500px, 300px);
+        }
+        75% {
+          transform: translate(0, 300px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+
+      @keyframes changeColor {
+        0%,
+        100% {
+          background-color: #ed7d31;
+        }
+        25% {
+          background-color: #70ad47;
+        }
+        50% {
+          background-color: #00a2e8;
+        }
+        75% {
+          background-color: #ffc000;
+        }
+      }
+
+      .box-inner {
+        animation: changeColor 8s linear infinite;
+        animation-play-state: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <button class="btn" id="startBtn">Start</button>
+      <button class="btn" id="stopBtn">Stop</button>
+      <button class="btn" id="pauseBtn">Pause</button>
+    </div>
+
+    <div class="container">
+      <div class="box" id="animatedBox">
+        <div class="box-inner"></div>
+      </div>
+    </div>
+
+    <script>
+      const box = document.getElementById("animatedBox");
+      const startBtn = document.getElementById("startBtn");
+      const stopBtn = document.getElementById("stopBtn");
+      const pauseBtn = document.getElementById("pauseBtn");
+
+      startBtn.addEventListener("click", () => {
+        box.style.animationPlayState = "running";
+      });
+
+      pauseBtn.addEventListener("click", () => {
+        box.style.animationPlayState = "paused";
+      });
+
+      stopBtn.addEventListener("click", () => {
+        box.style.animation = "none";
+        void box.offsetWidth;
+        box.style.animation = "moveSquare 8s linear infinite";
+        box.style.animationPlayState = "paused";
+      });
+    </script>
+  </body>
+</html>

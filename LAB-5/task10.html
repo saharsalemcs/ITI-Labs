@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 10</title>
+  </head>
+  <body>
+    <script>
+      function analyzeName() {
+        var input = prompt("enter your name:");
+
+        if (input === null || input.trim() === "") {
+          alert("Invalid input! enter a valid name.");
+          console.log(
+            "Name analysis failed: User entered an empty or null value.",
+          );
+          return;
+        }
+
+        var trimmedName = input.trim();
+
+        var length = trimmedName.length;
+        var firstLetter = trimmedName.charAt(0).toUpperCase();
+        var lastLetter = trimmedName.charAt(length - 1).toUpperCase();
+        var upperName = trimmedName.toUpperCase();
+        var lowerName = trimmedName.toLowerCase();
+
+        // Log details
+        console.log("--- Name Analysis Details ---");
+        console.log("Original Input: ", input);
+        console.log("Length: ", length);
+        console.log("First Letter: ", firstLetter);
+        console.log("Last Letter: ", lastLetter);
+        console.log("ALL CAPS: ", upperName);
+        console.log("lowercase: ", lowerName);
+
+        //  result in alert
+        var resultMessage =
+          "Name Analysis Results:\n" +
+          "Name: " +
+          trimmedName +
+          "\n" +
+          "First Letter: " +
+          firstLetter +
+          "\n" +
+          "Length: " +
+          length +
+          " character\n" +
+          "Last Letter: " +
+          lastLetter +
+          "\n" +
+          "ALL CAPS: " +
+          upperName +
+          "\n" +
+          "Lowercase: " +
+          lowerName;
+
+        alert(resultMessage);
+      }
+
+      analyzeName();
+    </script>
+  </body>
+</html>

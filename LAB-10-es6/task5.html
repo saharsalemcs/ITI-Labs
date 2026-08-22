@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      //  Global function
+      function testGlobal() {
+        console.log(this); // undefined , window if no use strict
+      }
+      testGlobal();
+
+      //  function in object
+      const obj = {
+        name: "Sahar",
+        show() {
+          console.log(this); // obj
+        },
+      };
+      obj.show();
+
+      //  Arrow function in object
+      const obj2 = {
+        name: "Mohamed",
+        show: () => {
+          console.log(this); // window
+        },
+      };
+      obj2.show();
+
+      // function in class
+      class Person {
+        show() {
+          console.log(this); //  person
+        }
+      }
+
+      const p = new Person();
+      p.show();
+    </script>
+  </body>
+</html>

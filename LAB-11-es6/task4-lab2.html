@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 4</title>
+  </head>
+  <body>
+    <script>
+      class Product {
+        #price;
+
+        constructor(name, price) {
+          this.name = name;
+          this.price = price;
+        }
+
+        get price() {
+          return this.#price;
+        }
+
+        set price(val) {
+          if (val > 0) {
+            this.#price = val;
+          } else {
+            console.log("Invalid price");
+          }
+        }
+      }
+
+      const product = new Product("Laptop", 1500);
+
+      console.log("Current Price:", product.price); // 1500
+
+      product.price = 2000;
+      console.log("Updated Price:", product.price); //  2000
+
+      product.price = -50; // Error: pprice must be a positive number
+      console.log("Price after negative value:", product.price); // 2000 // not changed
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Task 7</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: 20px;
+      }
+      td {
+        border: 1px solid #333;
+        padding: 10px 15px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <!-- 
+  Task 7: Display Even Numbers in a Table
+  Use a for loop to display even numbers from 1 to 30.
+  Output them inside an HTML table, five numbers per row.
+  -->
+  <body>
+    <script>
+      document.write("<table>");
+
+      var count = 0;
+
+      for (var i = 1; i <= 30; i++) {
+        if (i % 2 === 0) {
+          if (count % 5 === 0) {
+            document.write("<tr>");
+          }
+
+          document.write("<td>" + i + "</td>");
+
+          count++;
+
+          if (count % 5 === 0) {
+            document.write("</tr>");
+          }
+        }
+      }
+      document.write("</table>");
+    </script>
+  </body>
+</html>

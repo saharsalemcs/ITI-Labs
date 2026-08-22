@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <title>Task 3</title>
+    <style>
+      body {
+        background-color: #ffffff;
+        margin: 0;
+        padding: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #box {
+        width: 340px;
+        margin: 0 auto;
+        border: 2px solid #b6a6d8;
+        padding: 40px;
+      }
+      #social {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .socialbtn {
+        float: left;
+        width: 48%;
+        height: 34px;
+        line-height: 34px;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: bold;
+        text-align: center;
+      }
+      #fbbtn {
+        background-color: #3b5998;
+        margin-right: 4%;
+      }
+      #twbtn {
+        background-color: #1da1f2;
+      }
+      .socialicon {
+        font-weight: bold;
+        margin-right: 4px;
+      }
+      #orwrap {
+        text-align: center;
+        margin: 12px 0;
+      }
+      #orcircle {
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        border-radius: 13px;
+        background-color: #bfbfbf;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: center;
+      }
+      .textfield {
+        display: block;
+        width: 100%;
+        height: 20px;
+        padding: 20px 10px;
+        margin-bottom: 12px;
+        border: 3px solid #cccccc;
+        color: #999999;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #optionsrow {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      #optionsrow:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      #keepsigned {
+        float: left;
+        font-size: 13px;
+        color: #333333;
+      }
+      #keepsigned input {
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+      #forgotpw {
+        float: right;
+        font-size: 13px;
+      }
+      #forgotpw a {
+        color: #333333;
+        text-decoration: none;
+      }
+      #loginbtn {
+        display: block;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        background-color: #3b5387;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        border: none;
+        margin-bottom: 12px;
+      }
+      #signupwrap {
+        text-align: center;
+        font-size: 13px;
+        color: #333333;
+      }
+      #signupwrap a {
+        color: #3b9ae1;
+        font-weight: 600;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <div id="social">
+        <div class="socialbtn" id="fbbtn">
+          <span class="socialicon">f</span> Login to Facebook
+        </div>
+        <div class="socialbtn" id="twbtn">
+          <span class="socialicon">t</span> Login to Twitter
+        </div>
+      </div>
+
+      <div style="width: 100%; height: 20px"></div>
+
+      <div id="orwrap">
+        <span id="orcircle">Or</span>
+      </div>
+
+      <input type="text" class="textfield" value="Username" />
+      <input type="password" class="textfield" value="********" />
+
+      <div id="optionsrow">
+        <div id="keepsigned"><input type="checkbox" /> Keep me signed in</div>
+        <div id="forgotpw">
+          <a href="#">Forgot Your Password?</a>
+        </div>
+      </div>
+
+      <input type="button" id="loginbtn" value="Login" />
+
+      <div id="signupwrap">Not a member ? <a href="#">Sign up now!</a></div>
+    </div>
+  </body>
+</html>

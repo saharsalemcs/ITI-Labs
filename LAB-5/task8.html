@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 8</title>
+  </head>
+
+  <!-- 
+  Task 8: Name Input with do...while
+  Prompt the user to enter their name using a do...while loop.
+  Keep asking until they enter a non-empty (truthy) value.
+  Then greet the user with their name.
+  -->
+  <body>
+    <script>
+      var name;
+
+      do {
+        name = prompt("enter your name:");
+
+        if (name === null || name.trim() === "") {
+          alert("Name is required!");
+        }
+
+        name = name.trim();
+      } while (!name);
+
+      alert("Hello " + name + ", Welcome.");
+    </script>
+  </body>
+</html>
