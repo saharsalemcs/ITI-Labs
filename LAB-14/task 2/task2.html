@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+  </head>
+  <style>
+    html {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: relative;
+      justify-content: space-between;
+      min-height: 100vh;
+      align-items: center;
+      gap: 20px;
+      background-color: #ece8e3;
+      border: 1px solid black;
+    }
+    section {
+      width: 100%;
+      min-height: 150px;
+      height: fit-content;
+      border: 2px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    img {
+      width: 100px;
+      margin: 10px;
+      height: 100px;
+      transition: 0.4s;
+    }
+    img:hover {
+      transform: rotate(360deg) scale(1.2);
+    }
+  </style>
+
+  <body>
+    <div class="wrapper">
+      <section id="up"></section>
+      <section id="down">
+        <img src="./UP/1.jpg" alt="1" />
+        <img src="./UP/2.jpg" alt="2" />
+        <img src="./UP/3.jpg" alt="3" />
+        <img src="./UP/4.jpg" alt="4" />
+        <img src="./UP/5.jpg" alt="5" />
+        <img src="./UP/6.jpg" alt="6" />
+        <img src="./UP/7.jpg" alt="7" />
+        <img src="./UP/8.jpg" alt="8" />
+      </section>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
