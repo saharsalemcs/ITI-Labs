@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sahar Salem | Front-End Developer</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+      <div class="container">
+        <a class="navbar-brand" href="#home">Sahar<span>.</span></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="nav">
+          <ul class="navbar-nav gap-2">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <p class="eyebrow">Front-End Developer</p>
+            <h1>
+              Building calm,
+              <span class="stroke-underline"
+                >clean
+                <svg viewBox="0 0 200 14" preserveAspectRatio="none">
+                  <path
+                    d="M2 10 Q 50 2, 100 8 T 198 6"
+                    stroke="#C17F3E"
+                    stroke-width="3"
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              interfaces.
+            </h1>
+            <p class="lead">
+              Hi, I'm Sahar. a front-end developer who builds simple,
+              user-friendly web experiences with React, Tailwind, and Supabase.
+            </p>
+            <div class="d-flex gap-3 mt-4 flex-wrap">
+              <a href="#projects" class="btn-amber">View Projects</a>
+              <a href="#contact" class="btn-outline-amber">Get in Touch</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-img-wrap">
+              <img src="../images/hero.jpg" alt="hero" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <img src="../images/about.jpg" class="about-img" alt="About " />
+          </div>
+          <div class="col-lg-7">
+            <p class="section-eyebrow">About Me</p>
+            <h2 class="section-title">A bit about my journey</h2>
+            <p class="section-sub mt-3">
+              I'm a Computer Science student at Kafr el-Sheikh University,
+              focused on front-end development. I build with React, Tailwind
+              CSS, and Supabase, and I care about clean, usable interfaces.
+            </p>
+            <p class="section-sub">
+              Right now I'm preparing to enter the job market and applying for
+              React internships, while building out my GitHub and LinkedIn
+              presence.
+            </p>
+            <div class="row about-stats text-center text-md-start">
+              <div class="col-4">
+                <div class="num">6+</div>
+                <div class="lbl">Projects</div>
+              </div>
+              <div class="col-4">
+                <div class="num">2+</div>
+                <div class="lbl">Years learning</div>
+              </div>
+              <div class="col-4">
+                <div class="num">6</div>
+                <div class="lbl">Core tools</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <div class="container">
+        <div class="text-center mx-auto" style="max-width: 560px">
+          <p class="section-eyebrow">Skills</p>
+          <h2 class="section-title">What I work with</h2>
+          <p class="section-sub mx-auto">
+            The tools and languages I use most to build on the web.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-4">
+          <div class="col-6 col-md-3">
+            <div class="skill-card">
+              <i class="fa-brands fa-html5"></i>
+              <h6>HTML5</h6>
+              <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="skill-card">
+              <i class="fa-brands fa-css3-alt"></i>
+              <h6>CSS3</h6>
+              <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="skill-card">
+              <i class="fa-brands fa-js"></i>
+              <h6>JavaScript</h6>
+              <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="skill-card">
+              <i class="fa-brands fa-react"></i>
+              <h6>React</h6>
+              <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="skill-card">
+              <i class="fa-solid fa-wind"></i>
+              <h6>Tailwind CSS</h6>
+              <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 82%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="skill-card">
+              <i class="fa-brands fa-bootstrap"></i>
+              <h6>Bootstrap</h6>
+              <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 88%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="skill-card">
+              <i class="fa-brands fa-git-alt"></i>
+              <h6>Git</h6>
+              <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 78%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="skill-card">
+              <i class="fa-solid fa-database"></i>
+              <h6>Supabase</h6>
+              <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="text-center mx-auto" style="max-width: 560px">
+          <p class="section-eyebrow">Projects</p>
+          <h2 class="section-title">Selected work</h2>
+          <p class="section-sub mx-auto">
+            A few projects I've built and shipped to GitHub.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+              <img
+                src="https://placehold.co/500x300/E9C9A0/3B2C22?text=EduTest"
+                alt="EduTest"
+              />
+              <div class="body">
+                <span class="project-tag">React</span>
+                <span class="project-tag">Supabase</span>
+                <span class="project-tag">Tailwind</span>
+                <h5 class="mt-2">EduTest</h5>
+                <p>
+                  A role-based online exam platform with instructor exam
+                  creation, timed exam sessions, anti-cheat handling, and
+                  auto-save for students.
+                </p>
+                <a
+                  href="https://github.com/saharsalemcs/exam-platform"
+                  target="_blank"
+                  class="project-link"
+                  >View on GitHub <i class="fa-brands fa-github"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+              <img
+                src="https://placehold.co/500x300/F3E9DA/3B2C22?text=NovaDash"
+                alt="NovaDash"
+              />
+              <div class="body">
+                <span class="project-tag">React</span>
+                <span class="project-tag">Context API</span>
+                <span class="project-tag">Recharts</span>
+                <h5 class="mt-2">NovaDash</h5>
+                <p>
+                  A React admin dashboard built with Context API, useReducer,
+                  React Router, and Recharts for data visualization.
+                </p>
+                <a
+                  href="https://github.com/saharsalemcs/NovaDash"
+                  target="_blank"
+                  class="project-link"
+                  >View on GitHub <i class="fa-brands fa-github"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="project-card">
+              <img
+                src="https://placehold.co/500x300/E0CBAA/3B2C22?text=Social+Platform"
+                alt=""
+              />
+              <div class="body">
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">JWT</span>
+                <span class="project-tag">REST API</span>
+                <h5 class="mt-2">Social Platform</h5>
+                <p>
+                  A vanilla JavaScript social media platform with JWT
+                  authentication and full REST API integration.
+                </p>
+                <a
+                  href="https://github.com/saharsalemcs/Social-Media-Project"
+                  target="_blank"
+                  class="project-link"
+                  >View on GitHub <i class="fa-brands fa-github"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact text-center py-5 px-3 px-md-5">
+          <p class="section-eyebrow">Contact</p>
+          <h2>Let's work together</h2>
+          <a
+            href="mailto:saharsalemcs@gmail.com"
+            class="contact-email d-inline-block mt-3 mb-4"
+            >saharsalemcs@gmail.com</a
+          >
+          <div class="contact-icons">
+            <a
+              href="https://github.com/saharsalemcs"
+              target="_blank"
+              aria-label="GitHub"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a
+              href="https://linkedin.com/in/sahar-salem-5035432b7"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a href="mailto:saharsalemcs@gmail.com" aria-label="Email"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/saharsalemm"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/sahar.salem.505/"
+              target="_blank"
+              aria-label="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center">
+      <div class="container">&copy; 2026 Sahar Salem. All rights reserved.</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
