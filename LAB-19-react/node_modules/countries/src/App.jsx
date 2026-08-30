@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import Home from "./components/Home";
-import { CountriesProvider } from "./context/CountriesContext";
+import { CountriesProvider } from "./context/CountriesProvider";
 
 function App() {
   return (

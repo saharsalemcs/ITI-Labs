@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { useCountries } from "../context/useCountries";
 
-const REGIONS = ["Africa", "America", "Asia", "Europe", "Oceania"];
+const REGIONS = ["Africa", "Asia", "Europe", "Oceania"];
 
-const RegionFilter = ({ value, onChange }) => {
+function RegionFilter() {
+  const { region, toggleRegion } = useCountries();
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
@@ -16,9 +18,8 @@ const RegionFilter = ({ value, onChange }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleSelect = (region) => {
-    // clicking the already-selected region clears the filter
-    onChange(region === value ? "" : region);
+  const handleSelect = (value) => {
+    toggleRegion(value);
     setOpen(false);
   };
 
@@ -26,9 +27,9 @@ const RegionFilter = ({ value, onChange }) => {
     <div className="relative w-full max-w-[200px]" ref={ref}>
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="w-full flex items-center justify-between bg-white dark:bg-blue-900 text-gray-950 dark:text-white rounded-md shadow-md px-6 py-3 text-sm"
+        className="w-full flex items-center justify-between bg-white  text-gray-950 rounded-md shadow-md px-6 py-3 text-sm"
       >
-        <span>{value || "Filter by Region"}</span>
+        <span>{region || "Filter by Region"}</span>
         <svg
           className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
@@ -45,20 +46,20 @@ const RegionFilter = ({ value, onChange }) => {
       </button>
 
       {open && (
-        <ul className="absolute z-10 mt-2 w-full bg-white dark:bg-blue-900 text-gray-950 dark:text-white rounded-md shadow-md py-3 text-sm">
-          {REGIONS.map((region) => (
+        <ul className="absolute z-10 mt-2 w-full bg-white  text-gray-950 rounded-md shadow-md py-3 text-sm">
+          {REGIONS.map((r) => (
             <li
-              key={region}
-              onClick={() => handleSelect(region)}
+              key={r}
+              onClick={() => handleSelect(r)}
               className="px-6 py-1.5 cursor-pointer hover:opacity-70"
             >
-              {region}
+              {r}
             </li>
           ))}
         </ul>
       )}
     </div>
   );
-};
+}
 
 export default RegionFilter;
