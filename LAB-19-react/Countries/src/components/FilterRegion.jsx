@@ -1,30 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useCountries } from "../context/useCountries";
 
-const REGIONS = ["Africa", "Asia", "Europe", "Oceania"];
+const REGIONS = ["Africa", "Asia", "America", "Europe", "Oceania"];
 
 function RegionFilter() {
-  const { region, toggleRegion } = useCountries();
+  const { region, toggleRegion, setRegion } = useCountries();
   const [open, setOpen] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (ref.current && !ref.current.contains(e.target)) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   const handleSelect = (value) => {
     toggleRegion(value);
     setOpen(false);
+    setRegion(value);
   };
 
   return (
-    <div className="relative w-full max-w-[200px]" ref={ref}>
+    <div className="relative w-full max-w-[200px]">
       <button
         onClick={() => setOpen((prev) => !prev)}
         className="w-full flex items-center justify-between bg-white  text-gray-950 rounded-md shadow-md px-6 py-3 text-sm"

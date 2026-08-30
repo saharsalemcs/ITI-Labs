@@ -1,16 +1,22 @@
-import Header from "./components/Header";
-import Home from "./components/Home";
-import { CountriesProvider } from "./context/CountriesProvider";
+import AppLayout from "./components/AppLayout";
+import CountryDetails from "./pages/CountryDetails";
+import Home from "./pages/Home";
+import PageNotFound from "./pages/PageNotFound";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    element: <AppLayout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/country/:id", element: <CountryDetails /> },
+      { path: "*", element: <PageNotFound /> },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <CountriesProvider>
-      <div className=" min-h-screen bg-gray-50">
-        <Header />
-        <Home />
-      </div>
-    </CountriesProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

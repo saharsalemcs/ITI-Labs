@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CountriesContext } from "./CountriesContext";
+import { useSearchParams } from "react-router-dom";
 
 const API_URL = "https://countries.dev/countries";
 
@@ -8,8 +9,29 @@ export const CountriesProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const [search, setSearch] = useState("");
-  const [region, setRegion] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const search = searchParams.get("search") || "";
+  const region = searchParams.get("region") || "";
+
+  function setSearch(value) {
+    setSearchParams((prev) => {
+      const nextParams = new URLSearchParams(prev);
+      value ? nextParams.set("search", value) : nextParams.delete("search");
+      return nextParams;
+    });
+  }
+  function setRegion(value) {
+    setSearchParams((prev) => {
+      const params = new URLSearchParams(prev);
+      value ? params.set("region", value) : params.delete("region");
+      return params;
+    });
+  }
+
+  const toggleRegion = (value) => {
+    setRegion(region === value ? "" : value);
+  };
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -46,9 +68,6 @@ export const CountriesProvider = ({ children }) => {
     const matchesRegion = region ? country.region === region : true;
     return matchesSearch && matchesRegion;
   });
-  const toggleRegion = (value) => {
-    setRegion((prev) => (prev === value ? "" : value));
-  };
 
   return (
     <CountriesContext.Provider

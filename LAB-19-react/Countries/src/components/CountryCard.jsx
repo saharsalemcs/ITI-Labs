@@ -1,8 +1,13 @@
+import { Link } from "react-router-dom";
+
 const CountryCard = ({ country }) => {
-  const { name, population, region, capital, flags } = country;
+  const { name, population, region, capital, flags, alpha3Code } = country;
 
   return (
-    <div className="bg-white rounded-md shadow-md overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+    <Link
+      to={`/country/${alpha3Code}`}
+      className="bg-white rounded-md shadow-md overflow-hidden cursor-pointer hover:opacity-90 transition-opacity block"
+    >
       <img
         src={flags?.svg || flags?.png}
         alt={`Flag of ${name}`}
@@ -20,10 +25,10 @@ const CountryCard = ({ country }) => {
         </p>
         <p className="text-sm text-gray-950 ">
           <span className="font-semibold">Capital: </span>
-          {capital?.[0] || "N/A"}
+          {capital || "N/A"}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 
